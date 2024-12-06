@@ -1,0 +1,214 @@
+@charset "utf-8";
+
+/*-----------------------------------------
+* style.css - MASTERDATEI
+
+* 1.   Variablen
+* 2.   Schriften
+* 3.   Basis
+* 3.1  Basisformatierung
+* 3.2  Navigation
+* 4.   Formulare
+* 5.   Media Queries
+* 5.1  Media Query medium > 768px / 48rem
+* 5.2  Media Query large > 992px / 62rem
+* 5.3  Media Query x-large > 1200px / 75rem
+* 5.4  Media Query Print
+-------------------------------------------*/
+
+@import url("variables.css");
+@import url("fonts.css");
+@import "basics.css";
+
+
+/* Head */
+
+#main-menu {
+  text-align: center;
+}
+
+/*--------------------
+   FORMULARELEMENTE
+---------------------*/
+form {
+  width: 30rem;
+  margin: 1.25rem 0.625rem;
+  padding: 0.625rem 1.25rem;
+  border: 1px solid #333;
+}
+
+fieldset {  
+  padding: 0.625rem;
+  border: 1px solid #cccccc;
+} 
+
+fieldset.anrede {
+  margin: 0.625rem 0 0 0;
+  padding: 0;
+  border: none;
+}
+
+label {
+  display: inline-block;
+  min-width: 8.75rem;
+}
+
+input, 
+select {
+  background: rgba(255, 255, 200, 0.5);
+  min-width: 16.25rem;
+  height: 1.25rem;
+  margin: 0.3125rem 0;
+  border: 1px solid #333;
+}
+
+textarea {
+  background: rgba(255, 255, 200, 0.5);
+  min-width: 16.25rem;
+  height: 7.5rem;
+  margin-bottom: 1.25rem;
+  vertical-align: top;	
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  min-width: auto;
+  margin: 0 0 0.3125rem 0;
+  vertical-align: sub;
+}
+
+input[type="submit"] {
+  background: rgba(255, 255, 200, 0.5);
+  font-size: 1rem;
+  font-weight: bold;
+  min-width: 5rem;
+  height: 1.875rem;
+  margin: 1.25rem 0 0.625rem 0;
+  padding: 0.3125rem;
+  border: 1px solid #333;
+}
+
+#info, #datenschutz {
+  margin: 0 0.25rem 0.25rem 0;
+}
+
+.pflichtfeld { 
+  color: rgb(255, 0, 0);
+}
+
+#antwort {
+	background-color: rgba(255,000,000, 0.2);
+  font-weight: bold;
+  text-align: center;
+  width: 29.6875rem;
+  margin: 0.9375rem 0;
+  padding: 0.3125rem;
+}
+
+.video-position {
+    display: grid;
+    place-items: center; /* Zentriert sowohl horizontal als auch vertikal */
+    height: 70vh; /* Optional: Um den gesamten Viewport zu füllen */
+}
+
+
+.video-container {
+  width: 80%;
+  max-width: 700px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #000;
+}
+
+video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: none;
+  pointer-events: none; /* Deaktiviert Play-Button */
+}
+
+video::-webkit-media-controls-panel {
+  display: none !important;
+  opacity: 1 !important;
+  
+}
+
+
+/* Media Query - Medienabfrage
+eingeleitet mit der @media Regel
+Meist folgt ein Medientyp (Media Type - screen, print, speech, all)
+Danach wird eine Medien Eigenschaft (Media Feature - width, orientation) definiert, die einen Wert erhält.
+Mit einem Operator AND kann ein Medientyp und eine Eigenschaft oder verschiedene Eigenschaften miteinander verbunden werden. 
+orientation: portrait - Hochformat
+orientation: landscape - Querformat
+
+Alle Definitionen werden zusammen in weitere geschweifte klammern gesetzt und gelten damit nur für diesen Breakpoint. Breakpoints sind also definierte Umbruchpunkte an denen sich Layout und / oder Design verändern können. Hier werden nur die Änderungen zur Basisformatierung eingebunden.
+
+Bezug zur Anzeige
+min-width bezieht sich auf den Viewport und den sichtbaren verfügbaren Platz
+min-device-width bezieht sich auf die Bildschirmgröße bzw. alle 
+Angaben mit device im Ausdruck beziehgen sich auf den Bildschirm
+
+Beispiel:
+@media screen and (max-device-width: 768px) and (orientation: portrait) {}
+*/
+
+/*medium screen Tablet - ab 768px oder 48rem*/ 
+@media screen and (min-width: 48rem) {  
+  /* #wrapper {
+    background-color: rgb(255, 99, 71);
+  } */
+  
+  nav ul li { 
+    display: inline;
+  }
+  
+  footer {
+    justify-content: center;
+  }  
+}
+
+/*large screens - ab 992px oder 62rem*/
+@media screen and (min-width: 62rem) {  
+  /* #wrapper {
+    background-color: rgb(255, 246, 71);
+  } */
+
+  header {
+    align-items: center;
+  }
+  
+  footer {
+    justify-content: space-between;
+  }
+
+}
+
+/*x-large screens - ab 1200px oder 75rem*/
+@media screen and (min-width: 75rem) { 
+  /* #wrapper {
+    background-color: rgb(71, 255, 246);
+    font-weight: normal;
+  } */
+  
+}
+
+
+@media print {  
+  #wrapper {
+    background-color: #FFF;
+  }
+  
+  body {
+    background-color: #FFF;
+    color: #000;
+  }
+  
+  img,
+  header, 
+  footer,
+  #wrapper > div {
+    display: none;
+  } 
+}

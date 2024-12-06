@@ -1,0 +1,21 @@
+:root {
+  /*
+  Der Variablenname wird mit -- eingeleitet es folgt ein dazugehöriger Wert.
+  Alle Variablen innerhalb der pseudoklasse :root sind globale Variablen.
+  */
+
+  --font-color: #000;
+  --border-color: #000;
+  --bgcolor: rgb(250, 235, 215);
+  
+  --primary-color: rgb(225, 225, 225);
+  --secondary-color: rgb(250, 235, 215);
+  /* --accent-color:; */
+
+  --black: rgba(0, 0, 0, 1);
+  --black-50: rgba(0, 0, 0, 0.5);
+  --white: #FFF;
+
+  --spacer: 1rem;
+  --headline-size: 1.1rem;
+}
